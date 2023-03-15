@@ -1,26 +1,26 @@
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/Rubik-Regular.woff2') format('woff2') /* Chrome 36+, Opera 23+, Firefox 39+ */
-}
+/*@font-face {*/
+/*    font-display: swap; !* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. *!*/
+/*    font-family: 'Rubik';*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    src: url('../fonts/Rubik-Regular.woff2') format('woff2') !* Chrome 36+, Opera 23+, Firefox 39+ *!*/
+/*}*/
 
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 700;
-    src: url('../fonts/Rubik-Bold.woff2') format('woff2') /* Chrome 36+, Opera 23+, Firefox 39+ */
-}
+/*@font-face {*/
+/*    font-display: swap; !* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. *!*/
+/*    font-family: 'Rubik';*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    src: url('../fonts/Rubik-Bold.woff2') format('woff2') !* Chrome 36+, Opera 23+, Firefox 39+ *!*/
+/*}*/
 
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 500;
-    src: url('../fonts/Rubik-Medium.woff2') format('woff2') /* Chrome 36+, Opera 23+, Firefox 39+ */
-}
+/*@font-face {*/
+/*    font-display: swap; !* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. *!*/
+/*    font-family: 'Rubik';*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    src: url('../fonts/Rubik-Medium.woff2') format('woff2') !* Chrome 36+, Opera 23+, Firefox 39+ *!*/
+/*}*/
 
 .html {
     box-sizing: border-box;
@@ -62,30 +62,32 @@ body {
     margin: 0 auto;
 }
 
-.nav {
+.header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 86px;
 }
 
-.nav-wrapper-mobile {
+.header__inner-mobile {
     padding: 10px 0;
     display: none;
     flex-direction: column;
 }
 
-.nav-mobile {
+.header__inner-mobile-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.menu__profile-mobile img {
-    width: 26px;
+.menu-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.search-input-mobile {
+.header__search-input-mobile {
     height: 40px;
     background-color: #F7FAFC;
     color: #DEE2E7;
@@ -97,17 +99,16 @@ body {
     margin: 0 10px;
 }
 
-.search-input-mobile::placeholder {
+.header__search-input-mobile::placeholder {
     padding-left: 30px;
 }
 
-.header__search svg {
+.header__search-svg {
     margin-left: 15px;
     position: absolute;
     color: #8B96A5;
     width: 18px;
 }
-
 
 .header__search {
     display: flex;
@@ -116,7 +117,7 @@ body {
     box-sizing: border-box;
 }
 
-.search-input {
+.header__search-input {
     border: 2px solid #0D6EFD;
     height: 40px;
     width: 100%;
@@ -125,20 +126,11 @@ body {
     border-right: none;
 }
 
-.search-input:focus {
+.header__search-input:focus {
     outline: none;
 }
 
-/*.search-datalist {*/
-/*    font-family: 'Rubik', sans-serif;*/
-/*    position: relative;*/
-/*    border: 2px solid #0D6EFD;*/
-/*    border-left: 1px solid #0D6EFD;*/
-/*    height: 40px;*/
-/*    left: -5px;*/
-/*}*/
-
-.search-btn {
+.header__search-btn {
     font-family: 'Rubik', sans-serif;
     position: relative;
     border: 2px solid #0D6EFD;
@@ -150,18 +142,20 @@ body {
     font-size: 16px;
 }
 
-.menu {
+.menu__list {
     display: flex;
     gap: 0 48px;
+    margin-right: 14px;
+}
+
+.menu__list-item {
+    position: relative;
 }
 
 .menu__link {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.basket {
     position: relative;
 }
 
@@ -173,7 +167,7 @@ body {
     color: #515151;
 }
 
-.basket__qty {
+.menu__basket-qty {
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -188,22 +182,6 @@ body {
     top: -4px;
 }
 
-
-.menu__profile {
-    display: flex;
-    align-items: center;
-    color: #515151;
-}
-
-.menu__avatar {
-    width: 40px;
-}
-
-.menu__profile_name {
-    padding: 0 10px;
-}
-
-
 /*Top block*/
 
 .top__inner {
@@ -216,77 +194,99 @@ body {
     gap: 10px
 }
 
-.top__inner-mobile {
+.banner-mobile {
     display: none;
 }
 
-.top__inner-mobile img {
-    /*width: 100%;*/
+.banner-mobile__img {
     margin: 0 auto;
     max-width: 100%;
     max-height: 100%;
-    /*margin: auto;*/
 }
 
-.category__item {
-    padding: 10px 20px;
+.categories__item {
+    padding: 10px 10px;
     cursor: pointer;
 }
 
-.category__item:hover {
+.categories__item:hover {
     background-color: #E5F1FF;
     border-radius: 6px;
 }
 
-.top__banner {
+.banner {
+    position: relative;
+}
+
+.banner__button {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    height: 30px;
+    padding: 5px 30px;
+    background-color: #E3F0FF;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.banner__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: 0 0;
 }
 
-.top__inner img {
-
-    /*height: auto*/
-}
-
-.top__inner-form-login {
+.block-login {
     background-color: #E3F0FF;
     border-radius: 6px;
-    width: 200px;
     padding: 10px;
     gap: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    /*width:calc(100% / 3 - 100px);*/
 }
 
-.avatar {
+.block-login__avatar {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.registration {
+.block-login__registration-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(180deg, #127FFF 0%, #0067FF 100%);
     border-radius: 6px;
     border: none;
     height: 30px;
     color: #FFFFFF;
     width: 100%;
+    cursor: pointer;
+    padding-top:5px ;
+    padding-bottom: 5px;
 }
 
-.login {
+.block-login__login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #FFFFFF;
     border-radius: 6px;
     height: 30px;
     color: #0D6EFD;
     border: 1px solid #DEE2E7;
     width: 100%;
+    cursor: pointer;
+    padding-top:5px ;
+    padding-bottom: 5px;
 }
 
-.top__inner-form-item {
+.block-login__content {
     display: flex;
     align-items: center;
     border-radius: 6px;
@@ -295,26 +295,24 @@ body {
     color: #FFFFFF;
     font-size: 16px;
     max-height: 100%;
-    /*width:calc(100% / 3 - 20px);*/
-    /*width: 100%;*/
 }
 
-.top__inner-form-login div:nth-child(5) {
+.block-login div:nth-child(5) {
     background-color: #55BDC4;
 }
 
-.top__3rdColumn {
+.text-banner {
     display: flex;
     gap: 10px 10px;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    /*flex-wrap: wrap;*/
 }
 
 
-.top__3rdColumn-item {
+.text-banner__item {
     display: flex;
+    justify-content: center;
     align-items: center;
     border-radius: 6px;
     background-color: #F38332;
@@ -343,7 +341,7 @@ body {
     flex-wrap: wrap;
 }
 
-.promo__item {
+.card-product {
     flex: 0 0 220px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
     position: relative;
     overflow: hidden; /* Скрываем, что выходит за пределы */
@@ -351,34 +349,20 @@ body {
     border: 1px solid #E0E0E0;
     border-radius: 6px;
     padding: 16px;
-    /*position: relative;*/
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
-
 }
 
-.promo__item__img {
+.card-product__img {
     position: relative;
     display: block;
     height: 195px;
-    /*padding-bottom: 100%;*/
     overflow: hidden;
 }
 
-.promo__item__img img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
-}
-
-.promo__item__discount {
+.card-product__discount {
     position: absolute;
     width: 40px;
     height: 20px;
@@ -393,29 +377,29 @@ body {
     font-weight: 500;
 }
 
-.promo__item__priceLike {
+.card-product__priceLike {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.promo__item__price {
+.card-product__price {
     display: flex;
     justify-content: space-between;
 }
 
-.promo__item__oldPrice {
+.card-product__oldPrice {
     text-decoration: line-through;
     padding-left: 10px;
     color: #8B96A5;
 }
 
-.promo__item__newPrice {
+.card-product__newPrice {
     font-weight: 500;
     font-size: 18px;
 }
 
-.promo__item__favorite {
+.card-product__favorite {
     border: 1px solid #DEE2E7;
     box-shadow: 0px 1px 2px rgba(56, 56, 56, 0.08);
     border-radius: 6px;
@@ -427,22 +411,21 @@ body {
     color: #0D6EFD;
 }
 
-.promo__item__favorite svg {
+.card-product__favorite-svg {
     width: 24px;
-
 }
 
-.promo__item__favorite:hover {
+.card-product__favorite:hover {
     background-color: #0D6EFD;
     color: #FFFFFF;
 }
 
-.promo__item__title {
+.card-product__title {
     padding-top: 10px;
     color: #8B96A5;
 }
 
-.promo__item__btn {
+.card-product__btn {
     margin-top: 10px;
     border-radius: 6px;
     border: 1px solid #DEE2E7;
@@ -455,12 +438,12 @@ body {
     background-color: #FFFFFF;
 }
 
-.promo__item__btn svg {
+.card-product__btn-svg {
     width: 24px;
     margin-right: 20px;
 }
 
-.promo__item__btn:hover {
+.card-product__btn:hover {
     background-color: #0D6EFD;
     color: #FFFFFF;
 }
@@ -482,15 +465,15 @@ body {
 }
 
 @media (max-width: 660px) {
-    .nav-wrapper-mobile {
+    .header__inner-mobile {
         display: flex;
     }
 
-    .nav {
+    .header__inner {
         display: none;
     }
 
-    .top__inner-mobile {
+    .banner-mobile{
         display: flex;
     }
 
@@ -503,11 +486,4 @@ body {
         flex-direction: column;
         gap: 20px;
     }
-}
-
-@media (max-width: 415px) {
-    .top__3rdColumn {
-        flex-wrap: wrap;
-    }
-
 }

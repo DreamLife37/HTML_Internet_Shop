@@ -8,69 +8,75 @@
     <title>Internet Shop</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="header">
     <div class="container">
-        <nav class="nav">
-            <a href="#" class="logo">
-                <img src="images/svg/logo.svg" alt="Logo">
-            </a>
-            <form class="header__search">
-                <input type="search" class="search-input">
-                <button class="search-btn">Найти</button>
-            </form>
-            <ul class="menu">
-                <li class="menu__list">
-                    <a href="#" class="menu__link">
-                        <img class="menu__img" src="images/svg/heart-outline.svg" alt="Favorites">
-                        <span class="menu__text">Избранное</span>
-                    </a>
-                </li>
-                <li class="menu__list">
-                    <a href="#" class="menu__link">
-                        <img class="menu__img" src="images/svg/cube-outline.svg" alt="Orders">
-                        <span class="menu__text">Заказы</span>
-                    </a>
-                </li>
-                <li class="menu__list">
-                    <a href="#" class="menu__link basket">
-                        <img class="menu__img" src="images/svg/cart-outline.svg" alt="Basket">
-                        <span class="menu__text">Корзина</span>
-                        <span class="basket__qty">4</span>
-                    </a>
-                </li>
-<!--                <li class="menu__list">-->
-<!--                    <a href="#" class="menu__profile">-->
-<!--                        <img class="menu__avatar" src="images/svg/avatar.svg" alt="Avatar">-->
-<!--                        <span class="menu__profile_name">Андрей</span>-->
-<!--                        <img class="menu__img" src="images/svg/arrow.svg" alt="Arrow">-->
-<!--                    </a>-->
-<!--                </li>-->
-            </ul>
-        </nav>
-        <div class="nav-wrapper-mobile">
-            <nav class="nav-mobile">
-                <a href="#" class="logo">
-                    <img src="images/svg/logo.svg" alt="Logo">
+        <div class="header__inner">
+            <div class="logo">
+                <a class="logo__link" href="#">
+                    <img class="logo__img" src="images/svg/logo.svg" alt="Logo">
                 </a>
-                <ul class="menu">
-                    <li class="menu__list">
-                        <a href="#" class="menu__link basket">
-                            <img class="menu__img" src="images/svg/cart-outline.svg" alt="Basket">
-                            <span class="basket__qty">4</span>
+            </div>
+
+            <form class="header__search">
+                <input class="header__search-input" type="search">
+                <button class="header__search-btn">Найти</button>
+            </form>
+            <nav class="menu">
+                <ul class="menu__list">
+                    <li class="menu__list-item">
+                        <a class="menu__link" href="#">
+                            <img class="menu__img" src="images/svg/heart-outline.svg" alt="Favorites">
+                            <span class="menu__text">Избранное</span>
                         </a>
                     </li>
-                    <li class="menu__list">
-                        <a href="#" class="menu__profile-mobile">
-                            <img src="images/svg/person-outline.svg" alt="Profile">
+                    <li class="menu__list-item">
+                        <a href="#" class="menu__link">
+                            <img class="menu__img" src="images/svg/cube-outline.svg" alt="Orders">
+                            <span class="menu__text">Заказы</span>
+                        </a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="menu__link" href="#">
+                            <img class="menu__img" src="images/svg/cart-outline.svg" alt="Basket">
+                            <span class="menu__text">Корзина</span>
+                            <span class="menu__basket-qty">4</span>
                         </a>
                     </li>
                 </ul>
             </nav>
+        </div>
+        <div class="header__inner-mobile">
+            <div class="header__inner-mobile-top">
+                <div class="logo">
+                    <a class="logo__link" href="#">
+                        <img class="logo__img" src="images/svg/logo.svg" alt="Logo">
+                    </a>
+                </div>
+                <nav class="menu-mobile">
+                    <ul class="menu__list">
+                        <li class="menu__list-item">
+                            <a href="#" class="menu__link">
+                                <img class="menu__img" src="images/svg/cart-outline.svg" alt="Basket">
+                                <span class="menu__basket-qty">4</span>
+                            </a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a href="#" class="menu__link">
+                                <img class="menu__img" src="images/svg/person-outline.svg"
+                                     alt="Profile">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             <form class="header__search">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                <svg class="header__search-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <title>Search</title>
                     <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none"
                           stroke="currentColor"
@@ -79,7 +85,7 @@
                           stroke-width="32"
                           d="M338.29 338.29L448 448"/>
                 </svg>
-                <input type="search" class="search-input-mobile" placeholder="Поиск">
+                <input class="header__search-input-mobile" type="search" placeholder="Поиск">
             </form>
         </div>
     </div>
@@ -88,35 +94,36 @@
     <section class="top">
         <div class="container">
             <div class="top__inner">
-                <ul class="category__list">
-                    <li class="category__item">Элементы питания</li>
-                    <li class="category__item">Всё для ноутбуков</li>
-                    <li class="category__item">Наушники и гарнитуры</li>
-                    <li class="category__item">Автоаксессуары</li>
-                    <li class="category__item">Аксессуары для блогеров</li>
-                    <li class="category__item">Элементы питания</li>
-                    <li class="category__item">Носители информации, картридеры</li>
+                <ul class="categories">
+                    <li class="categories__item">Элементы питания</li>
+                    <li class="categories__item">Всё для ноутбуков</li>
+                    <li class="categories__item">Наушники и гарнитуры</li>
+                    <li class="categories__item">Автоаксессуары</li>
+                    <li class="categories__item">Аксессуары для блогеров</li>
+                    <li class="categories__item">Элементы питания</li>
+                    <li class="categories__item">Носители информации, картридеры</li>
                 </ul>
-                <div class="test_img"><img src="./images/banner.jpg" alt="Banner" class="top__banner"></div>
-                <div class="top__inner-form-login">
-                    <div class="avatar">
+                <div class="banner">
+                    <img class="banner__img" src="./images/banner.jpg" alt="Banner">
+                    <div class="banner__button">Узнать подробнее</div>
+                </div>
+                <div class="block-login">
+                    <div class="block-login__avatar">
                         <img src="images/svg/avatar-default.svg" alt="Avatar default">
                         <span>Привет друг</span>
                     </div>
-                    <button class="registration">Регистрация</button>
-                    <button class="login">Войти</button>
-                    <div class="top__inner-form-item">Низкие цены и огромный ассортимент</div>
-                    <div class="top__inner-form-item">Получи скидку 10% на первую покупку</div>
+                    <div class="block-login__registration-btn">Регистрация</div>
+                    <div class="block-login__login-btn">Войти</div>
+                    <div class="block-login__content">Низкие цены и огромный ассортимент</div>
+                    <div class="block-login__content">Получи скидку 10% на первую покупку</div>
                 </div>
             </div>
-            <div class="top__3rdColumn">
-
-                <div class="top__3rdColumn-item">Бесплатная доставка от 100 руб</div>
-
+            <div class="text-banner">
+                <div class="text-banner__item">Бесплатная доставка от 100 руб</div>
             </div>
 
-            <div class="top__inner-mobile">
-                <img src="./images/banner.jpg" alt="Banner" class="top__banner">
+            <div class="banner-mobile">
+                <img class="banner-mobile__img" src="./images/banner.jpg" alt="Banner">
             </div>
         </div>
     </section>
@@ -127,16 +134,19 @@
                 Акции
             </div>
             <div class="promo__inner">
-                <div class="promo__item">
-                    <div class="promo__item__img"><img src="./images/borofone-bx85.jpg" alt=""></div>
-                    <div class="promo__item__discount">-55%</div>
-                    <div class="promo__item__priceLike">
-                        <div class="promo__item__price">
-                            <div class="promo__item__newPrice">550 руб</div>
-                            <div class="promo__item__oldPrice">1100 руб</div>
+                <div class="card-product">
+
+                    <img class="card-product__img" src="./images/borofone-bx85.jpg" alt="">
+
+                    <div class="card-product__discount">-55%</div>
+                    <div class="card-product__priceLike">
+                        <div class="card-product__price">
+                            <div class="card-product__newPrice">550 руб</div>
+                            <div class="card-product__oldPrice">1100 руб</div>
                         </div>
-                        <div class="promo__item__favorite">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                        <div class="card-product__favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="card-product__favorite-svg"
+                                 viewBox="0 0 512 512">
                                 <title>Heart</title>
                                 <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
                                       fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -144,9 +154,9 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="promo__item__title">Кабель USB на Micro-USB BX85</div>
-                    <div class="promo__item__btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                    <div class="card-product__title">Кабель USB на Micro-USB BX85</div>
+                    <div class="card-product__btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="card-product__btn-svg" viewBox="0 0 512 512">
                             <title>Cart</title>
                             <circle cx="176" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round"
                                     stroke-linejoin="round"
@@ -164,16 +174,17 @@
                         <p>Добавить</p>
                     </div>
                 </div>
-                <div class="promo__item">
-                    <img src="./images/image%2086.png" alt="">
-                    <div class="promo__item__discount">-55%</div>
-                    <div class="promo__item__priceLike">
-                        <div class="promo__item__price">
-                            <div class="promo__item__newPrice">550 руб</div>
-                            <div class="promo__item__oldPrice">1100 руб</div>
+                <div class="card-product">
+                    <img class="card-product__img" src="./images/image%2086.png" alt="">
+                    <div class="card-product__discount">-55%</div>
+                    <div class="card-product__priceLike">
+                        <div class="card-product__price">
+                            <div class="card-product__newPrice">550 руб</div>
+                            <div class="card-product__oldPrice">1100 руб</div>
                         </div>
-                        <div class="promo__item__favorite">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                        <div class="card-product__favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="card-product__favorite-svg"
+                                 viewBox="0 0 512 512">
                                 <title>Heart</title>
                                 <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
                                       fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -181,9 +192,9 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="promo__item__title">Наушники Borofone BO55</div>
-                    <div class="promo__item__btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                    <div class="card-product__title">Наушники Borofone BO55</div>
+                    <div class="card-product__btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="card-product__btn-svg" viewBox="0 0 512 512">
                             <title>Cart</title>
                             <circle cx="176" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round"
                                     stroke-linejoin="round"
@@ -201,16 +212,17 @@
                         <p>Добавить</p>
                     </div>
                 </div>
-                <div class="promo__item">
-                    <img src="./images/borofone-bj27a.jpg" alt="">
-                    <div class="promo__item__discount">-55%</div>
-                    <div class="promo__item__priceLike">
-                        <div class="promo__item__price">
-                            <div class="promo__item__newPrice">550 руб</div>
-                            <div class="promo__item__oldPrice">1100 руб</div>
+                <div class="card-product">
+                    <img class="card-product__img" src="./images/borofone-bj27a.jpg" alt="">
+                    <div class="card-product__discount">-55%</div>
+                    <div class="card-product__priceLike">
+                        <div class="card-product__price">
+                            <div class="card-product__newPrice">550 руб</div>
+                            <div class="card-product__oldPrice">1100 руб</div>
                         </div>
-                        <div class="promo__item__favorite">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                        <div class="card-product__favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="card-product__favorite-svg"
+                                 viewBox="0 0 512 512">
                                 <title>Heart</title>
                                 <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
                                       fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -218,9 +230,9 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="promo__item__title">Портативный аккумулятор BJ27A Pindar 20000mAh</div>
-                    <div class="promo__item__btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                    <div class="card-product__title">Портативный аккумулятор BJ27A Pindar 20000mAh</div>
+                    <div class="card-product__btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="card-product__btn-svg" viewBox="0 0 512 512">
                             <title>Cart</title>
                             <circle cx="176" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round"
                                     stroke-linejoin="round"
@@ -238,16 +250,17 @@
                         <p>Добавить</p>
                     </div>
                 </div>
-                <div class="promo__item">
-                    <img src="./images/borofone-bh76.jpg" alt="">
-                    <div class="promo__item__discount">-55%</div>
-                    <div class="promo__item__priceLike">
-                        <div class="promo__item__price">
-                            <div class="promo__item__newPrice">550 руб</div>
-                            <div class="promo__item__oldPrice">1100 руб</div>
+                <div class="card-product">
+                    <img class="card-product__img" src="./images/borofone-bh76.jpg" alt="">
+                    <div class="card-product__discount">-55%</div>
+                    <div class="card-product__priceLike">
+                        <div class="card-product__price">
+                            <div class="card-product__newPrice">550 руб</div>
+                            <div class="card-product__oldPrice">1100 руб</div>
                         </div>
-                        <div class="promo__item__favorite">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                        <div class="card-product__favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="card-product__favorite-svg"
+                                 viewBox="0 0 512 512">
                                 <title>Heart</title>
                                 <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
                                       fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -255,9 +268,9 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="promo__item__title">Автомобильный держатель BH76 Soul</div>
-                    <div class="promo__item__btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                    <div class="card-product__title">Автомобильный держатель BH76 Soul</div>
+                    <div class="card-product__btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="card-product__btn-svg" viewBox="0 0 512 512">
                             <title>Cart</title>
                             <circle cx="176" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round"
                                     stroke-linejoin="round"
@@ -275,16 +288,17 @@
                         <p>Добавить</p>
                     </div>
                 </div>
-                <div class="promo__item">
-                    <img src="./images/borofone-bw24.jpg" alt="borofone-bw24">
-                    <div class="promo__item__discount">-55%</div>
-                    <div class="promo__item__priceLike">
-                        <div class="promo__item__price">
-                            <div class="promo__item__newPrice">550 руб</div>
-                            <div class="promo__item__oldPrice">1100 руб</div>
+                <div class="card-product">
+                    <img class="card-product__img" src="./images/borofone-bw24.jpg" alt="borofone-bw24">
+                    <div class="card-product__discount">-55%</div>
+                    <div class="card-product__priceLike">
+                        <div class="card-product__price">
+                            <div class="card-product__newPrice">550 руб</div>
+                            <div class="card-product__oldPrice">1100 руб</div>
                         </div>
-                        <div class="promo__item__favorite">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                        <div class="card-product__favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="card-product__favorite-svg"
+                                 viewBox="0 0 512 512">
                                 <title>Heart</title>
                                 <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
                                       fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -292,9 +306,9 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="promo__item__title">Беспроводные наушники BW24 Magic waves TWS</div>
-                    <div class="promo__item__btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                    <div class="card-product__title">Беспроводные наушники BW24 Magic waves TWS</div>
+                    <div class="card-product__btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="card-product__btn-svg" viewBox="0 0 512 512">
                             <title>Cart</title>
                             <circle cx="176" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round"
                                     stroke-linejoin="round"
@@ -312,16 +326,17 @@
                         <p>Добавить</p>
                     </div>
                 </div>
-                <div class="promo__item">
-                    <img src="./images/borofone-ba73a.jpg" alt="Borofone-ba73a">
-                    <div class="promo__item__discount">-55%</div>
-                    <div class="promo__item__priceLike">
-                        <div class="promo__item__price">
-                            <div class="promo__item__newPrice">550 руб</div>
-                            <div class="promo__item__oldPrice">1100 руб</div>
+                <div class="card-product">
+                    <img class="card-product__img" src="./images/borofone-ba73a.jpg" alt="Borofone-ba73a">
+                    <div class="card-product__discount">-55%</div>
+                    <div class="card-product__priceLike">
+                        <div class="card-product__price">
+                            <div class="card-product__newPrice">550 руб</div>
+                            <div class="card-product__oldPrice">1100 руб</div>
                         </div>
-                        <div class="promo__item__favorite">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                        <div class="card-product__favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="card-product__favorite-svg"
+                                 viewBox="0 0 512 512">
                                 <title>Heart</title>
                                 <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
                                       fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -329,9 +344,9 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="promo__item__title">Зарядное устройство BA73A Young PD35W EU набор с кабелем</div>
-                    <div class="promo__item__btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                    <div class="card-product__title">Зарядное устройство BA73A Young PD35W EU набор с кабелем</div>
+                    <div class="card-product__btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="card-product__btn-svg" viewBox="0 0 512 512">
                             <title>Cart</title>
                             <circle cx="176" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round"
                                     stroke-linejoin="round"
@@ -359,19 +374,19 @@
 <footer class="footer">
     <div class="container">
         <div class="footer__inner">
-            <div class="footer__logo">
-                <a href="#" class="logo">
-                    <img src="images/svg/logo.svg" alt="Logo">
+            <div class="footer__item">
+                <a href="#" class="footer__logo-link">
+                    <img class="footer__logo-img" src="images/svg/logo.svg" alt="Logo">
                 </a>
                 <p>Интернет магазин по продаже аксессуаров и комплектующих для мобильной электроники</p>
             </div>
-
-            <p>О нас</p>
-            <p>Контакты</p>
-            <p>Режим работы</p>
+            <p class="footer__item">О нас</p>
+            <p class="footer__item">Контакты</p>
+            <p class="footer__item">Режим работы</p>
         </div>
     </div>
 </footer>
+
 
 </body>
 </html>
