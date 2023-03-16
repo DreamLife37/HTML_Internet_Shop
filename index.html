@@ -52,11 +52,20 @@
             </nav>
         </div>
         <div class="header__inner-mobile">
+
             <div class="header__inner-mobile-top">
-                <div class="logo">
-                    <a class="logo__link" href="#">
-                        <img class="logo__img" src="images/svg/logo.svg" alt="Logo">
-                    </a>
+
+                <div class="logo-burger">
+                    <div class="burger-menu-icon">
+                        <a class="burger-menu-icon_link" href="#">
+                            <img class="burger-menu-icon_img" src="./images/svg/menu.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="logo">
+                        <a class="logo__link" href="#">
+                            <img class="logo__img" src="images/svg/logo.svg" alt="Logo">
+                        </a>
+                    </div>
                 </div>
                 <nav class="menu-mobile">
                     <ul class="menu__list">
@@ -386,7 +395,32 @@
         </div>
     </div>
 </footer>
+<div class="header__menu-mobile">
+    <div class="menu-hidden-top">
+        <div class="menu-hidden__wrapper">
+            <img src="./images/svg/avatar-default.svg" alt="Avatar default">
+            <div class="menu-hidden__login"><a class="menu-hidden__login-link" href="#">Войти</a> | <a class="menu-hidden__login-link" href="№">Регистрация</a></div>
+        </div>
+        <div class="header__close-menu-mobile">
+            <img class="header__close-menu-mobile-img" src="./images/svg/close-circle-outline.svg" alt="Close icon">
+        </div>
+    </div>
 
+    <nav class="menu-hidden">
+        <ul class="menu-hidden__list">
+            <li class="menu-hidden__item"><img class="menu-hidden__img" src="./images/svg/list-outline.svg"
+                                               alt="List icon"><a class="menu-hidden__link" href="#">Каталог</a></li>
+            <li class="menu-hidden__item"><img class="menu-hidden__img" src="./images/svg/heart-outline.svg"
+                                               alt="Favorites icon"><a class="menu-hidden__link" href="#">Избранное</a>
+            </li>
+            <li class="menu-hidden__item"><img class="menu-hidden__img" src="./images/svg/cube-outline.svg"
+                                               alt="My order icon"><a class="menu-hidden__link" href="#">Мои заказы</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="overlay"></div>
 
+<script src="script.js"></script>
 </body>
 </html>
